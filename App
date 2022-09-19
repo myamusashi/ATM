@@ -1,0 +1,41 @@
+class Bankaccount:
+    def __init__(self):
+        self.balance= 1200
+        print("Selamat datang di PyBank")
+        int(input('Masukan ID Card anda: '))
+        print('Saldo anda tersisa : ', '$',self.balance)
+    def question(self):
+        i =0
+        while i < 2:
+            value = input('Mau menambah saldo? (Y/N)')
+            if value == 'Y': #Jika memilih Y programnya akan dilanjutkan
+                print('Anda akan diarahkan ke laman deposit')
+                break
+            elif value == 'N': #jika memilih N programnnya bakalan Loop
+                print('Anda akan keluar')
+                pass
+            else:
+                print('Masukan yang benar!')
+                print('Pastikan hurufnya kapital!')
+    def deposit(self):
+        jumlah= float(input('Masukan jumlah saldo yang mau anda deposit: '))
+        self.balance += jumlah
+        print('\n  Jumlah yang akan di deposit: ', jumlah)
+        print('Jumlah saldo anda: ', self.balance, '$')
+    def withdraw(self):
+        jumlah= float(input('Masukan jumlah saldo yang mau anda tarik: '+ '$'))
+        if self.balance >= jumlah:
+            self.balance -= jumlah
+            print("\n Anda menarik saldo sebesar: $", jumlah, )
+        else:
+            print("\n Saldo anda tak cukup")
+
+    def display(self):
+        print('\n Jumlah saldo', self.balance)
+
+s = Bankaccount()
+
+s.question()
+s.deposit()
+s.withdraw()
+s.display()
