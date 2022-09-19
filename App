@@ -1,9 +1,19 @@
 class Bankaccount:
-    def __init__(self):
+    def account(self):
         self.balance= 1200
         print("Selamat datang di PyBank")
-        int(input('Masukan ID Card anda: '))
+        self.name = input('Masukan nama: ')
+        self.id = int(input('Masukan ID Card anda: '))
         print('Saldo anda tersisa : ', '$',self.balance)
+
+    def showaccount(self):
+        input('Mau Melihat informasi akun anda? ')
+        print('Info akun anda: ', self.name , self.id)
+
+    def showbalance(self):
+        input('Mau melihat saldo rekening anda? ')
+        print('Info saldo anda: ', self.balance)
+
     def question(self):
         i =0
         while i < 2:
@@ -20,7 +30,7 @@ class Bankaccount:
     def deposit(self):
         jumlah= float(input('Masukan jumlah saldo yang mau anda deposit: '))
         self.balance += jumlah
-        print('\n  Jumlah yang akan di deposit: ', jumlah)
+        print('\nJumlah yang akan di deposit: ', jumlah)
         print('Jumlah saldo anda: ', self.balance, '$')
     def withdraw(self):
         jumlah= float(input('Masukan jumlah saldo yang mau anda tarik: '+ '$'))
@@ -31,10 +41,13 @@ class Bankaccount:
             print("\n Saldo anda tak cukup")
 
     def display(self):
-        print('\n Jumlah saldo', self.balance)
+        print('\n Jumlah saldo:',self.balance)
 
 s = Bankaccount()
 
+s.account()
+s.showaccount()
+s.showbalance()
 s.question()
 s.deposit()
 s.withdraw()
